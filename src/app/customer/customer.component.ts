@@ -53,6 +53,10 @@ export class CustomerComponent implements OnInit {
       sendCatalog: true      
     });
 
+    this.customerForm.get('notification').valueChanges.subscribe(
+      value => this.setNotification(value)
+    );
+
     // this.customerForm = new FormGroup({
     //   firstName: new FormControl(),
     //   lastName: new FormControl(),
