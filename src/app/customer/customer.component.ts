@@ -59,14 +59,7 @@ export class CustomerComponent implements OnInit {
       rating: [null, ratingRange(1, 5)],
       //rating: [null, [Validators.min(1),Validators.max(5)]],
       sendCatalog: true,
-      addresses: this.formBuilder.group({
-        addressType: 'home',
-        street1: '',
-        street2: '',
-        city: '',
-        state: '',
-        zip:''
-      })   
+      addresses: this.buildAddress()
 
     });
 
@@ -89,6 +82,18 @@ export class CustomerComponent implements OnInit {
     //   notification: new FormControl('email'),
     //   sendCatalog: new FormControl(true),
     // });
+  }
+
+  buildAddress():FormGroup {
+    return this.formBuilder
+    .group({
+      addressType: 'home',
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      zip:''
+    })
   }
     
   save() {
