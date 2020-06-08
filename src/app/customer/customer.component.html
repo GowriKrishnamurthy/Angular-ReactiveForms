@@ -130,51 +130,52 @@
             </div>
         </div>
     </div>
+    <div formGroupName="addresses">
+        <div *ngIf="customerForm.get('sendCatalog').value">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label pt-0">Address Type</label>
+                <div class="col-md-8">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="addressType1Id" type="radio" value="home" formControlName="addressType"> Home
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="addressType1Id" type="radio" value="work" formControlName="addressType"> Work
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="addressType1Id" type="radio" value="other" formControlName="addressType"> Other
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-    <div *ngIf="customer.sendCatalog">
-        <div class="form-group row mb-2">
-            <label class="col-md-2 col-form-label pt-0">Address Type</label>
-            <div class="col-md-8">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" id="addressType1Id" type="radio" value="home" formControlName="addressType"> Home
-                    </label>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="cityId">
+                    City, State, Zip Code
+                </label>
+                <div class="col-md-3">
+                    <input class="form-control" id="cityId" type="text" placeholder="City" formControlName="city">
                 </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" id="addressType1Id" type="radio" value="work" formControlName="addressType"> Work
-                    </label>
+                <div class="col-md-3">
+                    <select class="form-control" id="stateId" formControlName="state">
+                        <option value disabled selected hidden>
+                            Select a State...
+                        </option>
+                        <option value="NSW">New South Wales</option>
+                        <option value="VIC">Victoria</option>
+                        <option value="QLD">Queensland</option>
+                        <option value="WA">Western Australia</option>
+                        <option value="SA">South Australia</option>
+                        <option value="TAS">Tasmania</option>
+                    </select>
                 </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" id="addressType1Id" type="radio" value="other" formControlName="addressType"> Other
-                    </label>
+                <div class="col-md-2">
+                    <input class="form-control" id="zipId" type="number" placeholder="Zip Code" formControlName="zip">
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group row mb-2">
-            <label class="col-md-2 col-form-label" for="cityId">
-                City, State, Zip Code
-            </label>
-            <div class="col-md-3">
-                <input class="form-control" id="cityId" type="text" placeholder="City" formControlName="city">
-            </div>
-            <div class="col-md-3">
-                <select class="form-control" id="stateId" formControlName="state">
-                    <option value disabled selected hidden>
-                        Select a State...
-                    </option>
-                    <option value="NSW">New South Wales</option>
-                    <option value="VIC">Victoria</option>
-                    <option value="QLD">Queensland</option>
-                    <option value="WA">Western Australia</option>
-                    <option value="SA">South Australia</option>
-                    <option value="TAS">Tasmania</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <input class="form-control" id="zipId" type="number" placeholder="Zip Code" formControlName="zip">
             </div>
         </div>
     </div>

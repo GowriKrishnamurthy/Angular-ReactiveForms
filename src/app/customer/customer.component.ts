@@ -58,7 +58,16 @@ export class CustomerComponent implements OnInit {
       notification:'email',
       rating: [null, ratingRange(1, 5)],
       //rating: [null, [Validators.min(1),Validators.max(5)]],
-      sendCatalog: true      
+      sendCatalog: true,
+      addresses: this.formBuilder.group({
+        addressType: 'home',
+        street1: '',
+        street2: '',
+        city: '',
+        state: '',
+        zip:''
+      })   
+
     });
 
     this.customerForm.get('notification').valueChanges.subscribe(
